@@ -8,7 +8,7 @@ object luisa {
 		personaje.encontrar(elemento)
 	}
 	method asignar(nuevoPersonaje){
-		personaje =nuevoPersonaje
+		personaje = nuevoPersonaje
 	}
 	
 	

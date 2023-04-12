@@ -7,8 +7,8 @@ object floki {
 	
 	method encontrar(elemento){
 		if(arma.estaCargada()){
-			arma.registrarUso()
 			elemento.recibirAtaque(arma.potencia())
+			arma.registrarUso()
 		}
 	}
 }
@@ -22,5 +22,7 @@ object mario {
 		elemento.recibirTrabajo()
 		ultimoElemento = elemento
 	}
-	method esFeliz() = valorRecolectado > 50 or ultimoElemento.altura() >= 10
+	method valorRecolectado() = valorRecolectado
+	method esFeliz() = valorRecolectado >= 50 or ultimoElemento.altura() >= 10
+	method ultimoElemento() = ultimoElemento
 }

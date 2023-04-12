@@ -8,6 +8,7 @@ object ballesta{
 		cantidadDeFlechas --
 		// -- = -=1
 	}	
+	method cantidadDeFlechas() = cantidadDeFlechas
 }
 
 object jabalina{

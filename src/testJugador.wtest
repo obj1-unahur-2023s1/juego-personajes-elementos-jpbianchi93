@@ -1,0 +1,17 @@
+import jugador.*
+import personajes.*
+import elementos.*
+
+test "Luisa con Mario se encuentra a aurora y el castillo" {
+	
+	luisa.personaje(mario)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	//hace la pregunta numerica
+	assert.equals(170,castillo.nivelDeDefensa())
+	assert.equals(45,mario.valorRecolectado())
+	//pregunta true/false
+	assert.that(mario.esFeliz())
+	assert.equals(castillo,mario.ultimoElemento())
+
+}

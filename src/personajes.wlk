@@ -3,8 +3,10 @@ import elementos.*
 //importación de archivos
 
 object floki {
-	var property arma = ballesta
+	var arma = ballesta
 	
+	method arma() = arma
+	method nuevaArma(nuevaArma){arma = nuevaArma}
 	method encontrar(elemento){
 		if(arma.estaCargada()){
 			elemento.recibirAtaque(arma.potencia())

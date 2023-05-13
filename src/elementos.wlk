@@ -1,5 +1,5 @@
 object castillo{
-	var nivelDeDefensa = 150
+	var property nivelDeDefensa = 150
 	
 	method nivelDeDefensa() = nivelDeDefensa
 	method altura() = 20
@@ -19,6 +19,7 @@ object aurora{
 	method recibirAtaque(potencia){
 		estaViva = not (potencia>=10)
 		}
+	method estaViva() = estaViva
 	method recibirTrabajo(){}
 	method otorgaValor() = 15
 }

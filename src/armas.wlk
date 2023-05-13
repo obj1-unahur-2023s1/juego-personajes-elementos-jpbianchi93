@@ -12,7 +12,7 @@ object ballesta{
 }
 
 object jabalina{
-	var  estaCargada = true
+	var property estaCargada = true
 	
 	method estaCargada() = estaCargada
 	method potencia() = 30

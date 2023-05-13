@@ -1,12 +1,14 @@
 import jugador.*
 import personajes.*
 import elementos.*
+import armas.*
 
 test "Luisa con Mario se encuentra a aurora y el castillo" {
 	
-	luisa.personaje(mario)
+	luisa.asignar(mario)
 	luisa.aparece(aurora)
 	luisa.aparece(castillo)
+	
 	//hace la pregunta numerica
 	assert.equals(170,castillo.nivelDeDefensa())
 	assert.equals(45,mario.valorRecolectado())
@@ -14,4 +16,36 @@ test "Luisa con Mario se encuentra a aurora y el castillo" {
 	assert.that(mario.esFeliz())
 	assert.equals(castillo,mario.ultimoElemento())
 
+}
+
+test "Luisa con Mario, aparece una tipa. Luego con Floki, aparece la aurora y el castillo"{
+	
+	floki.nuevaArma(jabalina)
+	luisa.asignar(mario)
+	luisa.aparece(tipa)
+	luisa.asignar(floki)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	
+	assert.equals(16,mario.valorRecolectado()) 
+	assert.equals(9,tipa.altura())
+	assert.notThat(mario.esFeliz())
+	assert.notThat(aurora.estaViva())
+	assert.equals(150,castillo.nivelDeDefensa())
+	assert.notThat(jabalina.estaCargada())
+	
+}
+
+test "Luisa con Floki aparece aurora y castillo"{
+	
+	floki.arma()
+	luisa.asignar(floki)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	
+	assert.equals(0,mario.valorRecolectado())
+	assert.that(aurora.estaViva())
+	assert.equals(146,castillo.nivelDeDefensa())
+	assert.that(ballesta.estaCargada())
+	assert.equals(8,ballesta.cantidadDeFlechas())
 }
